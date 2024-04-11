@@ -1,0 +1,273 @@
+/* Basic Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: gray;
+    background-color: #fff; /* Light mode background */
+}
+
+/* Navigation Bar Styles */
+header nav {
+    display: flex;
+    justify-content: center; /* Center items */
+    align-items: center; /* Vertically center items */
+    background: transparent;
+    padding: 10px;
+    position: relative; /* Needed for absolute positioning of elements */
+}
+
+nav a, nav img {
+    text-decoration: none;
+    color: black;
+    margin: 0 5px; /* Adjust space around links and logo */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav img {
+    width: 100px; /* Adjust logo size */
+    height: auto;
+    transition: transform 0.5s; /* Smooth transition for hover effect */
+}
+
+nav a:hover, nav img:hover {
+    color: blue;
+    transform: translateY(-5px); /* Move up slightly on hover */
+    transition: transform 0.5s;
+}
+
+/* Dark Mode Toggle Button Positioned to the Left */
+#modeToggle {
+    position: absolute;
+    left: 10px; /* Positioned to the left */
+    top: 50%; /* Align vertically at the center */
+    transform: translateY(-50%); /* Center it vertically */
+    padding: 5px 10px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#modeToggle:hover {
+    background: #e0e0e0;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode nav a,
+body.dark-mode #modeToggle,
+body.dark-mode .social-links a {
+    color: #fff;
+}
+
+body.dark-mode nav {
+    background-color: #444;
+}
+
+/* Personal Section Styles */
+.personal-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#personal-photo {
+    flex: 1;
+    position: relative;
+    width: fit-content;
+    margin: auto;
+}
+
+.round-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    display: block;
+    margin: 20px auto;
+    position: relative;
+}
+
+#personal-photo p {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+#personal-photo:hover p {
+    opacity: 1;
+}
+
+/* Tagline Styles */
+.tagline {
+    flex: 2;
+    text-align: left;
+    margin-left: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    color: black;
+}
+
+.tagline span {
+    display: inline-block;
+    opacity: 0;
+    animation: moveUp 0.8s ease forwards;
+    animation-delay: var(--delay, 0s);
+}
+
+@keyframes moveUp {
+    from {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Form Card Styles */
+.form-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.form-card {
+    background: #f8f8f8; /* Slightly off-white background */
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative; /* To position the logo */
+    width: 300px; /* Adjust as needed */
+}
+
+.card-logo {
+    width: 50px;
+    height: auto;
+    position: absolute;
+    top: -25px; /* Half outside the card */
+    right: 10px;
+}
+
+.form-card h3 {
+    margin-top: 30px; /* Adjust space for the logo */
+}
+
+/* Styling form elements */
+.form-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-card input, .form-card textarea {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.form-card button {
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+}
+
+.form-card button:hover {
+    background-color: darkblue;
+}
+
+/* Footer Styles */
+footer {
+    background: transparent;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Social Media Icons Styling */
+.social-links a {
+    display: inline-block;
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.social-logo {
+    width: 28px; /* Adjust this value to match your footer text size */
+    height: auto; /* Keeps the aspect ratio of the images */
+    vertical-align: middle; /* Aligns the icon with the middle of the text */
+    transition: transform 0.5s; /* Smooth transition for hover effect */
+}
+
+.social-logo:hover {
+    transform: translateY(-5px); /* Move up slightly on hover */
+}
+
+
+/* Chatbot Styles */
+.chatbot {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    text-align: center;
+}
+
+.chatbot img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+    .personal-section {
+        flex-direction: column;
+    }
+
+    .tagline {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    nav img {
+        width: 50px;
+        margin: 0;
+    }
+    
+    header nav {
+        justify-content: space-around;
+    }
+
+    #modeToggle {
+        margin-right: 0; /* Reset margin for smaller screens */
+        padding: 4px 8px; /* Adjust padding for smaller screens */
+    }
+
+    .form-card {
+        width: auto; /* Full width on smaller screens */
+    }
+}

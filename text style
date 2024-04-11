@@ -1,0 +1,5 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+.w3-tangerine {
+  font-family: 'Tangerine', serif;
+}
+<p class="w3-tangerine">Making the Web Beautiful!</p>
